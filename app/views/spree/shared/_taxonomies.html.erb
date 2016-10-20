@@ -1,0 +1,8 @@
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<nav id="taxonomies" class="sidebar-item" data-hook>
+  <% @products.each do |product| %>
+    <% cache [I18n.locale, product, max_level] do %>
+      <h6 class='taxonomy-root'><%= product.name %></h6>
+    <% end %>
+  <% end %>
+</nav>
