@@ -1,0 +1,21 @@
+// add variables, functions and mixins
+@import 'partials/colors';
+@import 'partials/fonts';
+@import 'partials/size_functions';
+@import 'partials/transform';
+@import 'partials/animation';
+@import 'partials/keyframes';
+
+// add components, which are small self-contained elements
+@import 'components/auth';
+@import 'components/footer';
+@import 'components/navbar';
+@import 'components/intercom';
+
+// add pages, which have many elements
+@import 'pages/home';
+@import 'pages/about_the_gum';
+@import 'pages/about_the_company';
+@import 'pages/early_access';
+@import 'pages/sales';
+@import 'pages/map';

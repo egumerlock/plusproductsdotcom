@@ -1,0 +1,116 @@
+.plus-team-pic {
+  max-height:600px;
+  overflow: hidden;
+
+  .bg-image {
+    position: relative
+  }
+
+  #plus_team {
+    display: block;
+    width: 100%;
+    margin: -1px auto 0 auto;
+  }
+}
+
+dl.feature-list {
+  padding-top: 15px;
+  dt {
+    @include font-helvetica-neue-bold;
+    font-size: 18px;
+    padding-top: 25px;
+  }
+  dd {
+    @include font-helvetica-neue-light;
+    font-size: 18px;
+    @media (max-width: 480px) {
+      text-align: left;
+    }
+  }
+}
+
+.plus-statement {
+  min-height: 250px;
+  padding-top: 80px;
+
+  p.statement {
+    @include font-helvetica-neue-light;
+    font-size: 18px;
+  }
+}
+
+.plus-founders {
+  margin: 50px 0;
+  background-color: #F7F7F7;
+  padding-top: 80px;
+
+  h4 {
+    font-family: $font-helvetica-neue;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 2px;
+
+  }
+
+  h5 {
+    @include font-helvetica-neue-light;
+    font-size: 12px;
+    margin: 0;
+    padding-bottom: 1px;
+  }
+
+  .founder-photo {
+    height: 190px;
+    width: 190px;
+  }
+
+  .founders-info {
+    padding: 30px 0 50px 0;
+  }
+
+  .founder-info {
+    margin-bottom: 20px;
+  }
+
+  .founder-text-block {
+    text-align: center;
+    background-color: #fff;
+    width: 200px;
+    padding: 5px 0 6px 0;
+  }
+}
+
+#now-hiring {
+  background-image: url(image_path('desk'));
+  height: 250px;
+  background-position: 0 79%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5px;
+
+  h2 {
+    padding: 7px 0;
+    // change background to white as text conflicts with image
+    @media (max-width: 1120px) {
+      background-color: rgba(255,255,255, 0.8);
+    }
+    @media (max-width: 500px) {
+      background-color: rgba(255,255,255, 0.95);
+    }
+    @media (min-width: 1850px) {
+      background-color: rgba(255,255,255, 0.8);
+    }
+  }
+
+  #join-plus-button {
+    margin-top: 55px;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.work-at-plus {
+  padding-bottom: 50px;
+}

@@ -1,0 +1,141 @@
+.no-horizontal-padding {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.available247 {
+  height: 500px;
+  padding-top: 50px;
+  .contact-bars {
+    margin-top: 80px;
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+  i.fa {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  }
+  .contact-bar {
+    @include font-helvetica-neue-light;
+    color: #666;
+    font-size: 1.8em;
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-color: #C5C5C5;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .contact-bar:hover {
+    background-color: #DFDFDF;
+  }
+}
+
+.plus-promise {
+  padding-top: 80px;
+  height: 300px;
+}
+
+.aboutgumfeature {
+  $desktop-height: 467px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .about-highlight {
+    font-weight: bold;
+  }
+
+  .about-gum-img, .about-gum-txt {
+    height: $desktop-height;
+  }
+
+  .about-gum-img {
+    overflow: hidden;
+
+    @media (max-width: 979px) {
+      height: 300px;
+    }
+  }
+
+  #yoga {
+
+    @media (max-width: 979px) {
+      position: relative;
+      top: -163px;
+    }
+    @media (max-width: 489px) {
+      top: -50px;
+    }
+  }
+
+  #yoga2 {
+    background-image: url(image_path('yoga'));
+    background-size: cover;
+    min-height: 720px;
+    background-position: bottom;
+  }
+
+  #mint {
+    @media (max-width: 979px) {
+      position: relative;
+      top: -180px;
+    }
+    @media (max-width: 489px) {
+      top: -50px;
+    }
+  }
+
+  .about-gum-txt {
+    font-size: 14px;
+    letter-spacing: 1px;
+    @include font-helvetica-neue-light;
+
+    @media (max-width: 767px) {
+      min-height: $desktop-height;
+      overflow: visible;
+      height: auto;
+    }
+    padding-top: 20px;
+
+    .about-highlight {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    h2 {
+      @include font-helvetica-neue-bold;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.acts-in-minutes .about-gum-txt, &.acts-in-minutes .about-gum-img {
+    color: $color-white-on-light-green;
+    background-color: $color-package-light-green;
+  }
+
+  &.healthy-ingredients .about-gum-txt, &.healthy-ingredients .about-gum-img {
+    color: $color-white-on-pink;
+    background-color: $color-package-pink;
+  }
+
+  &.fresh-taste .about-gum-txt, &.fresh-taste .about-gum-img {
+    color: $color-white-on-deep-blue;
+    background-color: $color-package-deep-blue;
+  }
+}

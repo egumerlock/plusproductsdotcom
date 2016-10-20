@@ -1,0 +1,67 @@
+.sales-progress {
+  margin-top: 50px;
+
+  h1 {
+    @include font-helvetica-neue-light;
+  }
+
+  h2 {
+    font-family: $font-package-medical-use-only;
+  }
+
+  .statement {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 70px;
+    .small {
+      font-size: 14px;
+    }
+  }
+
+  .progress {
+    height: 100px;
+    .progress-bar {
+      h3, h4 {
+        @include font-helvetica-neue-light;
+      }
+    }
+  }
+
+  #sales-progress {
+    margin-top:150px;
+  }
+
+  .progress-bar-sold {
+    background-color: $color-package-deep-blue;
+  }
+  .progress-bar-closed {
+    background-color: $color-package-light-green;
+  }
+  .progress-bar-commission {
+    background-color: $color-package-pink;
+  }
+
+  @media print {
+    .progress {
+      background-color: #f5f5f5 !important;
+      -webkit-print-color-adjust: exact;
+  
+      h3, h4 {
+        font-size: 20px !important;
+        color: white !important;
+      }
+    }
+    .progress-bar-sold {
+      background-color: $color-package-deep-blue !important;
+      -webkit-print-color-adjust: exact;
+    }
+    .progress-bar-closed {
+      background-color: $color-package-light-green !important;
+      -webkit-print-color-adjust: exact;
+    }
+    .progress-bar-commission {
+      background-color: $color-package-pink !important;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+}

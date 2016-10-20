@@ -1,0 +1,290 @@
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  html,
+  body{
+    width:100%;
+    overflow-x:hidden;
+  }
+}
+
+.perfectfeature {
+  margin-top: 20px;
+  height: 535px;
+  background-image: url(image_path('back_bullseye'));
+  background-repeat: no-repeat;
+  background-position: 50% 160px;
+}
+
+.call-to-action {
+  background-color: #F7F7F7;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+#plus-box {
+  margin-top: 55px;
+  width: 300px;
+}
+
+.gum-highlights {
+  a:hover {
+    text-decoration: none;
+  }
+  .gum-highlight {
+    height: 300px;
+    padding-top: 80px;
+    color: $color-white-on-deep-blue;
+    text-align: center;
+    h2 {
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: 0.7px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      color: $color-white-on-deep-blue;
+      margin: auto 50px;
+    }
+    p.learnmore {
+      margin-top: 20px;
+      padding: 10px 15px;
+      @include font-helvetica-neue-light;
+      display: inline-block;
+      letter-spacing: 0.8px;
+      color: #fff;
+    }
+  }
+  .fast-acting {
+    background-color: $color-package-light-green;
+    &:hover {
+      color: $color-white-on-darker-package-light-green;
+      background-color: $color-darker-package-light-green;
+      p.learnmore {
+        background-color: $color-darker-package-deep-blue;
+      }
+    }
+
+    p.learnmore {
+      background-color: $color-package-deep-blue;
+    }
+  }
+  .low-calorie {
+    background-color: $color-package-pink;
+    &:hover {
+      color: $color-white-on-darker-package-pink;
+      background-color: $color-darker-package-pink;
+      p.learnmore {
+        background-color: $color-darker-package-light-green;
+      }
+    }
+    p.learnmore {
+      background-color: $color-package-light-green;
+    }
+  }
+  .great-flavor {
+    background-color: $color-package-deep-blue;
+    &:hover {
+      color: $color-white-on-darker-package-deep-blue;
+      background-color: $color-darker-package-deep-blue;
+      p.learnmore {
+        background-color: $color-darker-package-pink;
+      }
+    }
+    p.learnmore {
+      background-color: $color-package-pink;
+    }
+  }
+}
+
+.map-feature {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#map {
+  background-color: #000;
+  margin-top: 20px;
+  width: 100%;
+  height: 600px;
+  z-index: 1;
+}
+
+#mapoverlay {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 10;
+  height: 400px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+
+  &.allow-access {
+    background-color: rgba(0,0,0,0);
+  }
+
+  padding-top: 100px;
+
+  h3#coming-soon {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+    font-family: $font-package-medical-use-only;
+    font-weight: 900;
+    font-size: 42px;
+  }
+}
+
+.feature {
+  h2 {
+    @include font-helvetica-neue-light;
+  }
+  h3 {
+    @include font-helvetica-neue-light;
+    font-size: 16px;
+    color: #797874;
+  }
+}
+
+.button {
+  padding: 10px 15px;
+  background-color: $color-package-light-green;
+  color: $color-white-on-light-green;
+  margin: 20px;
+  border: none;
+  margin: 0;
+  display: inline-block;
+  @include font-helvetica-neue-light;
+  letter-spacing: 0.5px;
+  &:hover {
+    text-decoration: none;
+    background-color: $color-darker-package-light-green;
+    color: $color-white-on-darker-package-light-green;
+  }
+  &:visited, &:focus {
+    color: $color-white-on-light-green;
+    text-decoration: none;
+  }
+  &.button-primary {
+    background-color: $color-package-deep-blue;
+    &:hover {
+      color: #fff;
+    }
+    &:disabled {
+      background-color: #fff;
+      color: #D0D0D0;
+      border-color: #D0D0D0;
+      border-style: solid;
+      border-size: 2px;
+    }
+  }
+}
+
+#loudspeaker {
+  max-height: 200px;
+}
+
+.subscribe-feature {
+  padding-bottom: 50px;
+  h2 {
+    margin-bottom: 8px;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .subscription_error {
+    padding: 10px;
+    color: $color-package-pink;
+  }
+  .subscribe-form {
+    padding-top: 20px;
+  }
+}
+
+.submit-col .button {
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+.center-img {
+  margin: 0 auto;
+}
+
+// fix for Chrome font bug: https://code.google.com/p/chromium/issues/detail?id=336476#c40
+body {
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}
+
+// modal styling
+.modal-backdrop.fade.in {
+  opacity: 0.9;
+}
+
+.modal-backdrop {
+  background-color: #fff;
+}
+
+.modal-content {
+  border-radius: 0;
+  border-color: $color-package-light-green;
+  border-width: 3px;
+}
+
+.modal-dialog {
+  padding-top: 50px;
+}
+
+#plus-logo-modal {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+.modal-body {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.line-blue {
+  width: 100%;
+  height: 8px;
+  background-color: $color-package-light-blue;
+}
+
+#age-warn {
+  font-family: $font-package-medical-use-only;
+  font-size: 24px;
+  color: $color-package-light-green;
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
+.checkform {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.checkform {
+  display: inline;
+  label {
+    @include font-helvetica-neue-light;
+    font-size: 18px;
+  }
+  input {
+    float: none !important;
+    margin-right: 13px;
+  }
+}

@@ -6,6 +6,8 @@ gem 'rails', '4.2.7.1'
 gem 'solidus'
 gem 'solidus_auth_devise'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets

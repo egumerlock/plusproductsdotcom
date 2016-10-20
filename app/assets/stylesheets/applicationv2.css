@@ -1,0 +1,33 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * Canvas related styles
+ *= require canvas/css/bootstrap
+ *= require canvas/style.css
+ *= require canvas/css/swiper.css
+ *= require canvas/css/dark.css
+ *= require canvas/css/font-icons
+ *= require canvas/css/animate.css
+ *= require canvas/css/magnific-popup.css
+ *= require canvas/css/responsive.css
+ *
+ *
+ *
+ * Revolution Slider styles
+ *= require rs-plugin/css/settings.css
+ *= require rs-plugin/css/layers.css
+ *= require rs-plugin/css/navigation.css
+ *
+ * Custom Styles
+ *= require publicv2
+ *= require font-awesome/css/font-awesome.css
+ */

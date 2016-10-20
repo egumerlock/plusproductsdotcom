@@ -1,0 +1,58 @@
+#asfeaturedsection {
+  margin-top: 10px;
+  margin-bottom:10px;
+
+
+}
+.logo {
+  img {
+    max-height: 50px;
+    text-align: center;
+  }
+  @media (max-width: 980px) {
+    padding-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+#mg-logo {
+  img {
+    max-height: 80px;
+    margin-top: -15px;
+  }
+  @media (max-width: 980px) {
+    padding-bottom: 0;
+  }
+}
+#sf-chronicle-logo {
+  img {
+    margin-top: 10px;
+  }
+}
+
+#asfeaturedtitle {
+  margin-bottom: 32px;
+}
+
+.button {
+  background-color: $color-package-light-green;
+  color: $color-white-on-light-green;
+  &:hover {
+    text-decoration: none;
+    background-color: $color-darker-package-light-green;
+    color: $color-white-on-darker-package-light-green;
+  }
+  &.button-primary {
+    background-color: $color-package-deep-blue;
+    &:hover {
+      background-color: $color-darker-package-deep-blue;
+    }
+    &:disabled {
+      background-color: #fff;
+      color: #D0D0D0;
+      border-color: #D0D0D0;
+      border-style: solid;
+      border-size: 2px;
+    }
+  }
+}

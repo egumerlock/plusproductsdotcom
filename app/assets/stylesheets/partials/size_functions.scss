@@ -1,0 +1,29 @@
+// some size functions and variables that help with media queries
+$screen-xs-min: 320px;
+$screen-sm-min: 480px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$screen-iphone6-min: 375px;
+
+@mixin scale-font-across-screen-sizes($xs, $iphone6, $sm, $md, $lg, $xl) {
+  @media (min-width: $screen-xs-min) {
+    font-size: $xs;
+  }
+  @media (min-width: $screen-iphone6-min) {
+    font-size: $iphone6;
+  }
+  @media (min-width: $screen-sm-min) {
+    font-size: $sm;
+  }
+  @media (min-width: $screen-md-min) {
+    font-size: $md;
+  }
+  @media (min-width: $screen-lg-min) {
+    font-size: $lg;
+  }
+  @media(min-width: $screen-xl-min) {
+    font-size: $xl;
+  }
+}

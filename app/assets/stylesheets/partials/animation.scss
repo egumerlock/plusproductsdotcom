@@ -1,0 +1,10 @@
+/*
+    Example usage:
+    @include animation(10s, 5s, changecolour)
+ */
+@mixin animation ($description) {
+    -webkit-animation: $description;
+    -moz-animation: $description;
+    -o-animation: $description;
+    animation: $description;
+}

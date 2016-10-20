@@ -1,0 +1,37 @@
+$font-package-dot-com: DIN Alternate, Sans-Serif;
+$font-package-back-text: Bodony 82, Serif;
+$font-package-medical-use-only: DIN Condensed, 'Roboto Condensed', Sans-Serif;
+
+
+@mixin font-helvetica-neue-light {
+  font-family: "HelveticaNeueLight",
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "HelveticaNeue",
+    "Helvetica Neue",
+    "Roboto",
+    'TeXGyreHerosRegular',
+    "Helvetica",
+    "Tahoma",
+    "Geneva",
+    "Arial",
+    sans-serif;
+    font-weight:300;
+    font-stretch:normal;
+}
+
+@mixin font-helvetica-neue-bold {
+  font-family: "HelveticaNeue",
+  "Helvetica Neue",
+  "Roboto",
+  'TeXGyreHerosRegular',
+  "Helvetica",
+  "Tahoma",
+  "Geneva",
+  "Arial",
+  sans-serif;
+  font-weight: 600;
+  font-stretch: normal;
+}
+
+$font-helvetica-neue: 'Helvetica Neue', "Roboto", Helvetica, Sans-Serif;

@@ -38,6 +38,7 @@ module Plusproductsdotcom
 
     # Load assets from bower, which are stored in the "components" folder
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
-    config.public_file_server.enabled = true
+    # Load fonts from app/assets folder
+    
   end
 end
