@@ -1,0 +1,21 @@
+I"1(function() {
+  $(function() {
+    if ($.cookie("age_verified") === "true") {
+      $('#age-gate').modal('hide');
+    } else {
+      $('#age-gate').modal({
+        backdrop: 'static',
+        show: true
+      });
+    }
+    $("#age-conf-checkbox").change(function() {
+      $("#modal-continue-button").prop('disabled', !$("#age-conf-checkbox").prop("checked"));
+      return $.cookie("age_verified", $("#age-conf-checkbox").prop("checked"));
+    });
+    return $(document).ready(function() {
+      return $('#fullpage').fullpage();
+    });
+  });
+
+}).call(this);
+:ET
