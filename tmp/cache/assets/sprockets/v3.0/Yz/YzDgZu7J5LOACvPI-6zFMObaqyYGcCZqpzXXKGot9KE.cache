@@ -1,0 +1,18 @@
+I"Ö(function() {
+  jQuery(function() {
+    $('.track_inventory_checkbox').on('click', function() {
+      $(this).siblings('.variant_track_inventory').val($(this).is(':checked'));
+      return $(this).parent('form').submit();
+    });
+    return $('.toggle_variant_track_inventory').on('submit', function() {
+      Spree.ajax({
+        type: this.method,
+        url: this.action,
+        data: $(this).serialize()
+      });
+      return false;
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,73 @@
+I"p
+(function() {
+  var CountUpdateForms;
+
+  CountUpdateForms = (function() {
+    var errorHandler, successHandler;
+
+    function CountUpdateForms() {}
+
+    CountUpdateForms.beginListening = function(isReceiving) {
+      $('body').on('click', '#listing_transfer_items .fa-edit', (function(_this) {
+        return function(ev) {
+          var transferItemId;
+          ev.preventDefault();
+          transferItemId = $(ev.currentTarget).data('id');
+          Spree.NumberFieldUpdater.hideReadOnly(transferItemId);
+          return Spree.NumberFieldUpdater.showForm(transferItemId);
+        };
+      })(this));
+      $('body').on('click', '#listing_transfer_items .fa-void', (function(_this) {
+        return function(ev) {
+          var transferItemId;
+          ev.preventDefault();
+          transferItemId = $(ev.currentTarget).data('id');
+          Spree.NumberFieldUpdater.hideForm(transferItemId);
+          return Spree.NumberFieldUpdater.showReadOnly(transferItemId);
+        };
+      })(this));
+      return $('body').on('click', '#listing_transfer_items .fa-check', (function(_this) {
+        return function(ev) {
+          var itemAttributes, quantity, quantityKey, stockTransferNumber, transferItem, transferItemId;
+          ev.preventDefault();
+          transferItemId = $(ev.currentTarget).data('id');
+          stockTransferNumber = $("#stock_transfer_number").val();
+          quantity = parseInt($("#number-update-" + transferItemId + " input[type='number']").val(), 10);
+          itemAttributes = {
+            id: transferItemId,
+            stockTransferNumber: stockTransferNumber
+          };
+          quantityKey = isReceiving ? 'receivedQuantity' : 'expectedQuantity';
+          itemAttributes[quantityKey] = quantity;
+          transferItem = new Spree.TransferItem(itemAttributes);
+          return transferItem.update(successHandler, errorHandler);
+        };
+      })(this));
+    };
+
+    successHandler = function(transferItem) {
+      if ($('#received-transfer-items').length > 0) {
+        Spree.NumberFieldUpdater.successHandler(transferItem.id, transferItem.received_quantity);
+        Spree.StockTransfers.ReceivedCounter.updateTotal();
+      } else {
+        Spree.NumberFieldUpdater.successHandler(transferItem.id, transferItem.expected_quantity);
+      }
+      return show_flash("success", Spree.translations.updated_successfully);
+    };
+
+    errorHandler = function(errorData) {
+      return show_flash("error", errorData.responseText);
+    };
+
+    return CountUpdateForms;
+
+  })();
+
+  if (Spree.StockTransfers == null) {
+    Spree.StockTransfers = {};
+  }
+
+  Spree.StockTransfers.CountUpdateForms = CountUpdateForms;
+
+}).call(this);
+:ET

@@ -1,0 +1,22 @@
+<title><%= yield(:title).empty? ? "Plus" : yield(:title) %></title>
+<%= stylesheet_link_tag 'applicationv2', media: 'all' %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<%= analytics_init if Rails.env.production? %>
+<%= csrf_meta_tags %>
+<% if @mobile_viewport %>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<% else %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<% end %>
+<%= favicon_link_tag 'favicon.ico' %>
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<meta property="og:title" content="Plus Cannabis Infused Gum" />
+<meta property="og:description" content="Gluten free, vegan friendly and with no artificial sweeteners — Plus Gum is absorbed in your mouth, not your stomach, so it starts working in less than fifteen minutes. Each piece has fewer than five calories." />
+<meta property="og:image" content="<%= image_url('products/spearmint_sixpack_thumb')%>" />

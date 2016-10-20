@@ -1,0 +1,76 @@
+I"P(function() {
+  var adjustLineItem, deleteLineItem, editing, editingDone, lineItemURL, onDeleteLineItem, onSaveLineItem;
+
+  editing = function(e) {
+    e.preventDefault();
+    return $(e.delegateTarget).addClass('editing');
+  };
+
+  editingDone = function(e) {
+    e.preventDefault();
+    return $(e.delegateTarget).removeClass('editing');
+  };
+
+  onSaveLineItem = function(e) {
+    var line_item, line_item_id, quantity;
+    e.preventDefault();
+    line_item = $(this).closest('.line-item');
+    line_item_id = line_item.data('line-item-id');
+    quantity = parseInt(line_item.find('input.line_item_quantity').val());
+    adjustLineItem(line_item_id, quantity);
+    return editingDone(e);
+  };
+
+  onDeleteLineItem = function(e) {
+    var line_item, line_item_id;
+    e.preventDefault();
+    if (!confirm(Spree.translations.are_you_sure_delete)) {
+      return;
+    }
+    line_item = $(this).closest('.line-item');
+    line_item_id = line_item.data('line-item-id');
+    deleteLineItem(line_item_id);
+    return editingDone(e);
+  };
+
+  $(document).ready(function() {
+    return $('.line-item').on('click', '.edit-line-item', editing).on('click', '.cancel-line-item', editingDone).on('click', '.save-line-item', onSaveLineItem).on('click', '.delete-line-item', onDeleteLineItem);
+  });
+
+  lineItemURL = function(id) {
+    return (Spree.routes.line_items_api(order_number)) + "/" + id + ".json";
+  };
+
+  adjustLineItem = function(line_item_id, quantity) {
+    var url;
+    url = lineItemURL(line_item_id);
+    return Spree.ajax({
+      type: "PUT",
+      url: url,
+      data: {
+        line_item: {
+          quantity: quantity
+        }
+      }
+    }).done(function(msg) {
+      return window.Spree.advanceOrder();
+    });
+  };
+
+  deleteLineItem = function(line_item_id) {
+    var url;
+    url = lineItemURL(line_item_id);
+    return Spree.ajax({
+      type: "DELETE",
+      url: url
+    }).done(function(msg) {
+      $('#line-item-' + line_item_id).remove();
+      if ($('.line-items tr.line-item').length === 0) {
+        $('.line-items').remove();
+      }
+      return window.Spree.advanceOrder();
+    });
+  };
+
+}).call(this);
+:ET

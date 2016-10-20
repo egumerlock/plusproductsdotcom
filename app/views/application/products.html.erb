@@ -1,0 +1,79 @@
+<%= render "shared/headerv2" %>
+
+<div class="section nomargin noborder">
+  <div class="heading-block center nobottomborder nobottommargin">
+    <h2>products</h2>
+  </div>
+</div>
+
+<div id="products" class="portfolio grid-container portfolio-nomargin portfolio-full portfolio-masonry mixed-masonry grid-container clearfix">
+
+  <article class="portfolio-item pf-media pf-icons wide">
+    <div class="portfolio-image">
+      <%= image_tag "products/sour_tin" %>
+      <div class="portfolio-overlay">
+        <div class="portfolio-desc">
+          <h3>Sour Gummies</h3>
+          <span>200mg THC</span>
+        </div>
+        <a href="<%= image_path "products/sour_tin" %>" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="portfolio-item pf-media pf-icons wide">
+    <div class="portfolio-image">
+      <%= image_tag "products/original_tin" %>
+      <div class="portfolio-overlay">
+        <div class="portfolio-desc">
+          <h3>Original Gummies</h3>
+          <span>200mg THC</span>
+        </div>
+        <a href="<%= image_path "products/original_tin" %>" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="portfolio-item pf-media pf-icons wide">
+    <div class="portfolio-image">
+      <%= image_tag "products/spearmint_sixpack" %>
+      <div class="portfolio-overlay">
+        <div class="portfolio-desc">
+          <h3> Spearmint Six Pack</h3>
+          <span>150mg THC total, 25mg per piece</span>
+        </div>
+        <a href="<%= image_path "products/spearmint_sixpack" %>" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="portfolio-item pf-media pf-icons wide">
+    <div class="portfolio-image">
+      <%= image_tag "products/spearmint_single" %>
+      <div class="portfolio-overlay">
+        <div class="portfolio-desc">
+          <h3> Spearmint Single</h3>
+          <span>25mg THC</span>
+        </div>
+        <a href="<%= image_path "products/spearmint_single" %>" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+      </div>
+    </div>
+  </article>
+  
+</div>
+
+<div class="section nomargin noborder">
+  <div class="heading-block center nobottomborder nobottommargin">
+    <h2><%= link_to "Find Plus Gum near you", store_finder_path %></h2>
+  </div>
+</div>
+
+<div class="section parallax full-screen nomargin noborder dark" style="background-image: url('<%= image_path('large/hands_plus') %>');" data-stellar-background-ratio="0.4">
+</div>
+
+<div class="section nomargin noborder">
+  <div class="heading-block center nobottomborder nobottommargin">
+    <h2>"I can't believe how quickly it worked."</h2>
+  </div>
+</div>
+<div id="instagram-photos" class="instagram-photos masonry-thumbs col-5" data-user="2032193147" data-count="10" data-type="user" data-resolution="standard_resolution"></div>

@@ -1,0 +1,45 @@
+<!-- Header
+============================================= -->
+<header id="header" class="transparent-header full-header">
+
+  <div id="header-wrap">
+
+    <div class="container clearfix">
+
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+      <!-- Logo
+      ============================================= -->
+      <div id="logo">
+        <a href="/" class="standard-logo" data-dark-logo="<%= image_path('logo/logo_dark') %>">
+          <%= image_tag "logo/logo", alt: "Plus Logo" %>
+        </a>
+        <a href="/" class="retina-logo" data-dark-logo="<%= image_path('logo/logo_dark@2x')%>">
+          <%= image_tag "logo/logo@2x", alt: "Plus Logo" %>
+        </a>
+      </div><!-- #logo end -->
+
+      <!-- Primary Navigation
+      ============================================= -->
+      <nav id="primary-menu">
+        <ul>
+          <li class="<%= 'current' if current_page?(root_path) %>">
+            <%= link_to "Home", root_path %>
+          </li>
+          <li class="<%= 'current' if current_page?(spree_path) %>">
+            <%= link_to "Products", spree_path %>
+          </li>
+          <li class="<%= 'current' if current_page?(store_finder_path) %>">
+            <%= link_to "Locations", store_finder_path %>
+          </li>
+          <li class="<%= 'current' if current_page?(team_path) %>">
+            <%= link_to "Team", team_path %>
+          </li>
+        </ul>
+      </nav><!-- #primary-menu end -->
+
+    </div>
+
+  </div>
+
+</header><!-- #header end -->

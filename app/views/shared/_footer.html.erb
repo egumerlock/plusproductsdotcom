@@ -1,0 +1,54 @@
+<footer class="footer">
+
+  <div class="container footer-mid">
+    <div class="row">
+      <div class="col-sm-4 footer-col">
+        <h4>ABOUT THE GUM</h4>
+        <ul>
+          <li><%= link_to "Fast Acting",  main_app.about_gum_path(anchor: 'fast-acting') %></li>
+          <li><%= link_to "Low Calorie", main_app.about_gum_path(anchor: 'low-calorie') %></li>
+          <li><%= link_to "Tastes Great", main_app.about_gum_path(anchor: 'great-flavor') %></li>
+        </ul>
+      </div>
+      <div class="col-sm-4 footer-col">
+        <h4>ABOUT THE COMPANY</h4>
+        <ul>
+          <li><%= link_to "Team", main_app.about_company_path %></li>
+          <li><%= link_to "Jobs", 'https://angel.co/plus-gum/jobs/', target: '_blank' %></li>
+        </ul>
+      </div>
+      <div class="col-sm-4 footer-col">
+        <h4>CONTACT US</h4>
+        <ul>
+          <li>
+            <a href="mailto:hi@plusgum.com" target="_blank">
+              <i class="fa fa-envelope left"></i>
+              <span> hi@plusgum.com</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="Intercom('show')">
+              <i class="fa fa-comment left"></i> Chat With Us</i>
+            </a>
+          </li>
+          <li id="phonenumber">
+            <a href="tel:+18005640842">
+              <i class="fa fa-phone left"></i>
+              <span>1 (800) 564-0842</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer-terminal">
+    <div class="container">
+      <p id="prepared">PLUS GUM IS ARTFULLY PREPARED IN THE BAY AREA</p>
+      <ul class="pull-right">
+        <li id="copyright">© 2015 PLUS MEDICAL</li>
+      </ul>
+    </div>
+  </div>
+</footer>

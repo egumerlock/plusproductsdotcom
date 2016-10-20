@@ -1,0 +1,26 @@
+I"=(function() {
+  var ReceivedCounter;
+
+  ReceivedCounter = (function() {
+    function ReceivedCounter() {}
+
+    ReceivedCounter.updateTotal = function() {
+      var newTotal;
+      newTotal = _.reduce($('.js-number-update-text'), function(memo, el) {
+        return memo + parseInt($(el).text().trim(), 10);
+      }, 0);
+      return $('#total-received-quantity').text(newTotal);
+    };
+
+    return ReceivedCounter;
+
+  })();
+
+  if (Spree.StockTransfers == null) {
+    Spree.StockTransfers = {};
+  }
+
+  Spree.StockTransfers.ReceivedCounter = ReceivedCounter;
+
+}).call(this);
+:ET

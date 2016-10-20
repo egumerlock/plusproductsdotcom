@@ -1,0 +1,12 @@
+I"á(function() {
+  $(function() {
+    $(document).ajaxStart(function() {
+      return $("#progress").show();
+    });
+    return $(document).ajaxStop(function() {
+      return $("#progress").hide();
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,19 @@
+I"M(function() {
+  $(function() {
+    var $input, $paymentMethods, updateSelected;
+    if ($('.new_payment').is('*')) {
+      $input = $('input[name="payment[payment_method_id]"]');
+      $paymentMethods = $('.payment-method-settings .payment-methods');
+      updateSelected = function() {
+        var id;
+        id = $input.filter(":checked").val();
+        $paymentMethods.addClass('hidden');
+        return $paymentMethods.filter("#payment_method_" + id).removeClass('hidden');
+      };
+      $input.on('click', updateSelected);
+      return updateSelected();
+    }
+  });
+
+}).call(this);
+:ET

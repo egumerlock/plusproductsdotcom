@@ -1,0 +1,68 @@
+I"¬(function() {
+  var NumberFieldUpdater;
+
+  NumberFieldUpdater = (function() {
+    var resetInput, toggleButtonVisibility, toggleForm, toggleReadOnly;
+
+    function NumberFieldUpdater() {}
+
+    NumberFieldUpdater.hideReadOnly = function(id) {
+      toggleReadOnly(id, false);
+      return resetInput(id);
+    };
+
+    NumberFieldUpdater.showReadOnly = function(id) {
+      return toggleReadOnly(id, true);
+    };
+
+    NumberFieldUpdater.showForm = function(id) {
+      return toggleForm(id, true);
+    };
+
+    NumberFieldUpdater.hideForm = function(id) {
+      return toggleForm(id, false);
+    };
+
+    NumberFieldUpdater.successHandler = function(id, newNumber) {
+      $("#number-update-" + id + " span").text(newNumber);
+      this.hideForm(id);
+      return this.showReadOnly(id);
+    };
+
+    toggleReadOnly = function(id, show) {
+      var cssDisplay;
+      toggleButtonVisibility('edit', id, show);
+      toggleButtonVisibility('trash', id, show);
+      cssDisplay = show ? 'block' : 'none';
+      return $("#number-update-" + id + " span").css('display', cssDisplay);
+    };
+
+    toggleForm = function(id, show) {
+      var cssDisplay;
+      toggleButtonVisibility('void', id, show);
+      toggleButtonVisibility('check', id, show);
+      cssDisplay = show ? 'block' : 'none';
+      return $("#number-update-" + id + " input[type='number']").css('display', cssDisplay);
+    };
+
+    toggleButtonVisibility = function(buttonIcon, id, show) {
+      var cssDisplay;
+      cssDisplay = show ? 'inline-block' : 'none';
+      return $(".fa-" + buttonIcon + "[data-id='" + id + "']").css('display', cssDisplay);
+    };
+
+    resetInput = function(id) {
+      var countText, tableCell;
+      tableCell = $("#number-update-" + id);
+      countText = tableCell.find('span').text().trim();
+      return tableCell.find("input[type='number']").val(countText);
+    };
+
+    return NumberFieldUpdater;
+
+  })();
+
+  Spree.NumberFieldUpdater = NumberFieldUpdater;
+
+}).call(this);
+:ET

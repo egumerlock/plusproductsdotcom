@@ -1,0 +1,16 @@
+I"a(function() {
+  Handlebars.registerHelper("t", function(key) {
+    if (Spree.translations[key]) {
+      return Spree.translations[key];
+    } else {
+      console.error("No translation found for " + key + ".");
+      return key;
+    }
+  });
+
+  Handlebars.registerHelper("admin_url", function() {
+    return Spree.pathFor("admin");
+  });
+
+}).call(this);
+:ET

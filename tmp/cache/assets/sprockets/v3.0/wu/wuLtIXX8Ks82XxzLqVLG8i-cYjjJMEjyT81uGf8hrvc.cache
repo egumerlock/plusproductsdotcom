@@ -1,0 +1,53 @@
+I"(function() {
+  $(document).ready(function() {
+    var hideEditMemoForm;
+    if (!($('#sc_memo_edit_form').length > 0)) {
+      return;
+    }
+    $('.js-edit-memo').on('click', (function(_this) {
+      return function(ev) {
+        var originalValue;
+        ev.preventDefault();
+        originalValue = $('#memo-edit-row').data('original-value');
+        $('#sc_memo_edit_form').find("[name='store_credit[memo]']").val(originalValue);
+        $('#memo-display-row').addClass('hidden');
+        return $('#memo-edit-row').removeClass('hidden');
+      };
+    })(this));
+    $('.js-save-memo').on('click', function(ev) {
+      ev.preventDefault();
+      return Spree.ajax($('#sc_memo_edit_form').attr('url'), {
+        data: $('#sc_memo_edit_form').serialize(),
+        dataType: 'json',
+        method: 'put',
+        success: ((function(_this) {
+          return function(response) {
+            var newValue;
+            newValue = $('#sc_memo_edit_form').find("[name='store_credit[memo]']").val();
+            $('#memo-edit-row').data('original-value', newValue);
+            $('#memo-display-row').find('.js-memo-text').text(newValue);
+            hideEditMemoForm();
+            return show_flash('success', response.message);
+          };
+        })(this)),
+        error: ((function(_this) {
+          return function(xhr, status) {
+            return show_flash('error', xhr.responseJSON.message);
+          };
+        })(this))
+      });
+    });
+    $('.js-cancel-memo').on('click', (function(_this) {
+      return function(ev) {
+        ev.preventDefault();
+        return hideEditMemoForm();
+      };
+    })(this));
+    return hideEditMemoForm = function() {
+      $('#memo-edit-row').addClass('hidden');
+      return $('#memo-display-row').removeClass('hidden');
+    };
+  });
+
+}).call(this);
+:ET

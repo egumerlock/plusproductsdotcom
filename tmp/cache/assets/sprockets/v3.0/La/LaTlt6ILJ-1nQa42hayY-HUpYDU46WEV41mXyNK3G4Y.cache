@@ -1,0 +1,25 @@
+I"R(function() {
+  var fadeOutTime, showTime;
+
+  showTime = 5000;
+
+  fadeOutTime = 500;
+
+  $(function() {
+    var $initialFlash;
+    $initialFlash = $(".flash");
+    return setTimeout((function() {
+      return $initialFlash.fadeOut(fadeOutTime);
+    }), showTime);
+  });
+
+  window.show_flash = function(type, message) {
+    var $flashWrapper, flash_div;
+    $flashWrapper = $(".js-flash-wrapper");
+    flash_div = $("<div class=\"flash " + type + "\" />");
+    $flashWrapper.prepend(flash_div);
+    return flash_div.html(message).show().delay(showTime).fadeOut(fadeOutTime);
+  };
+
+}).call(this);
+:ET
